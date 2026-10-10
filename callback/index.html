@@ -1,0 +1,14 @@
+<!doctype html><html lang="nl"><meta charset="utf-8"><title>Tesla login – code</title>
+<body style="font-family:sans-serif;max-width:46em;margin:3em auto">
+<h1>Tesla autorisatie ontvangen</h1>
+<p>Kopieer de volledige URL hieronder en geef die aan de bot:<br>
+<code>python tesla_auth.py exchange '<URL>'</code></p>
+<textarea id="u" rows="5" style="width:100%" readonly></textarea>
+<p id="e" style="color:#b00"></p>
+<script>
+document.getElementById('u').value = location.href;
+var q = new URLSearchParams(location.search);
+if (q.get('error')) document.getElementById('e').textContent = 'Fout: ' + q.get('error') + ' ' + (q.get('error_description')||'');
+</script>
+<p><small>Deze pagina stuurt niets door; de code verloopt na enkele minuten.</small></p>
+</body></html>
